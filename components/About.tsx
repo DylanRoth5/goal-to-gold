@@ -7,14 +7,14 @@ export const About = () => {
       <h2 className="text-4xl self-center text-center font-bold mt-8 m-4">Testimonials</h2>
       <Card className="mt-4 italic mx-10">
         <CardContent className="mx-10 mt-6 text-center font-minecraft">
-          "This app has changed my life! I've never been more consistent with my
-          habits." - Happy User
+        &#34;This app has changed my life! I&apos;ve never been more consistent with my
+          habits.&#34; - Happy User
         </CardContent>
       </Card>
       <Card className="mt-4 italic mx-10">
         <CardContent className="mx-10 mt-6 text-center font-minecraft">
-          "The streak-based system is incredibly motivating. I love seeing my progress
-          every day." - Satisfied User
+        &#34;The streak-based system is incredibly motivating. I love seeing my progress
+          every day.&#34; - Satisfied User
         </CardContent>
       </Card>
     </div>
