@@ -1,3 +1,4 @@
+import { About } from "@/components/About";
 import Front from "@/components/Front";
 import FrontBg from "@/components/FrontBg";
 import NavBar from "@/components/NavBar";
@@ -10,6 +11,7 @@ export default function Home() {
       <Front></Front>
       <Tracker></Tracker>
       <FrontBg></FrontBg>
+      <About></About>
       <footer className="w-full h-10 flex justify-center items-center">
         <div className="w-full text-center">
           <p className="text-sm">Made with ❤️ by Dylan</p>

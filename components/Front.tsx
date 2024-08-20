@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Button } from "./ui/button";
 export default function Front() {
   return (
     <div className="flex flex-col animated-bg items-center animated-bg w-full justify-center min-h-96 py-80 ">
@@ -7,15 +8,15 @@ export default function Front() {
 
           <h1 className="text-6xl flex font-minecraft text-foreground font-bold">
             Welcome to {' '}
-            <p className="font-semibold align-middle tracking-tight text-foreground pl-2"><span className=" text-slate-500">Goal</span><span className="text-3xl">to</span><span className=" text-amber-500">Gold</span></p>
+            <p className="font-semibold align-middle tracking-tight text-foreground pl-2"><span className="ml-1 text-muted-foreground"> Goal</span><span className="text-3xl"> to </span><span className=" text-amber-500">Gold</span></p>
           </h1>
           <div className="flex">
             <p className="mt-3 text-2xl font-minecraft text-foreground p-2">
               Get started by
             </p>
             <div className="flex my-4">
-              <Link href="/register" className="block mt-4 font-minecraft bg-foreground lg:inline-block lg:mt-0 text-background light:text-foreground align-middle p-2 mr-4 hover:bg-slate-700 hover:dark:bg-slate-300">
-                Registeing
+              <Link href="/register">
+                <Button>Registering</Button>
               </Link>
             </div>
           </div>
