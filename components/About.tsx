@@ -2,7 +2,7 @@ import favicon from "@/app/favicon.ico";
 import { Card, CardContent } from "./ui/card";
 
 export const About = () => {
-  return (<div>
+  return (<div id="about">
     <div className="container mx-auto p-4  flex flex-col xl:flex-row">
       <h2 className="text-4xl self-center text-center font-bold mt-8 m-4">Testimonials</h2>
       <Card className="mt-4 italic mx-10">
@@ -20,7 +20,7 @@ export const About = () => {
     </div>
     <div className="grid grid-cols-2 gap-4 p-4">
       <div className="container mx-auto p-4 m-4">
-        <h1 className="text-6xl font-bold xl:text-center">About</h1>
+        <h1 className="text-4xl font-bold xl:text-center">About</h1>
         <p className="mt-4">
           This is a simple habit tracker that helps you stay consistent with your
           goals. It uses a simple, streak-based system to help you stay motivated
