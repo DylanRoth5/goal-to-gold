@@ -16,10 +16,11 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { toast } from "@/components/ui/use-toast"
+import { signup } from '@/app/login/actions'
 
 const FormSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+  email: z.string().min(2, {
+    message: "Email must be valid.",
   }),
   password: z.string().min(6, {
     message: "Password must be at least 6 characters.",
@@ -28,13 +29,14 @@ const FormSchema = z.object({
 
 export function InputForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
-    defaultValues: {
-      username: "",
-    },
+    resolver: zodResolver(FormSchema)
   })
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
+    const formData = new FormData();
+    formData.append("email", data.email);
+    formData.append("password", data.password);
+    signup(formData)
     toast({
       title: "You submitted the following values:",
       description: (
@@ -50,12 +52,12 @@ export function InputForm() {
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
         <FormField
           control={form.control}
-          name="username"
+          name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="example@email.com" {...field} />
               </FormControl>
               <FormDescription>
                 This is your public display name.
@@ -80,23 +82,7 @@ export function InputForm() {
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="password"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Repeat Password</FormLabel>
-              <FormControl>
-                <Input placeholder="secret" {...field} />
-              </FormControl>
-              <FormDescription>
-                Re-enter your password.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit">Submit</Button>
+        <Button formAction={signup} type="submit">Submit</Button>
       </form>
     </Form>
   )

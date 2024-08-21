@@ -7,10 +7,13 @@ import { supabase } from "@/utils/supabase";
 
 export default async function Home() {
   const { data: { user } } = await supabase.auth.getUser()
+
+  console.log(user)
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <NavBar isUserLoggedIn={user ? true : false}/>
-      <Front  email={user?.email}></Front>
+      <NavBar isUserLoggedIn={user ? true : false}></NavBar>
+      <Front email={user?.email}></Front>
       <Tracker></Tracker>
       <FrontBg></FrontBg>
       <About></About>
