@@ -3,7 +3,8 @@ import Front from "@/components/Front";
 import FrontBg from "@/components/FrontBg";
 import NavBar from "@/components/NavBar";
 import Tracker from "@/components/Tracker";
-import { createClient } from "@/utils/supabase/server";
+// import { supabase } from "@/utils/supabase";
+import { createClient } from "@/utils/supabase/client";
 
 const supabase = createClient()
 
