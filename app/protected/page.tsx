@@ -3,12 +3,13 @@ import Front from "@/components/Front";
 import FrontBg from "@/components/FrontBg";
 import NavBar from "@/components/NavBar";
 import Tracker from "@/components/Tracker";
-import { supabase } from "@/utils/supabase";
+// import { supabase } from "@/utils/supabase";
+import { createClient } from "@/utils/supabase/client";
+
+const supabase = createClient()
 
 export default async function Home() {
   const { data: { user } } = await supabase.auth.getUser()
-
-  console.log(user)
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
