@@ -17,7 +17,7 @@ export default function Tracker() {
 
         <div className="flex flex-col  justify-center  py-20  px-20">
 
-          <h1 className="text-4xl font-bold ">Tracker</h1>
+          <h1 className="text-4xl font-bold ">The Tracker</h1>
           <p className="mt-3 text-xl">
             Track your goals and earn rewards!
           </p>
